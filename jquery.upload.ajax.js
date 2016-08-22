@@ -2,8 +2,7 @@
     $.fn.upload_ajax = function (options) {
         var inp = this;
         var settings = $.extend({}, $.fn.upload_ajax.defaults, options);
-        if ($.support.ajax) {
-            if (window.FormData !== undefined) {
+        if ($.fn.upload_ajax.support) {
                 inp.on('change', function (e) {
                     var files = e.target.files;
                     var data = new FormData();
@@ -29,9 +28,6 @@
             else {
                 settings.error("Browser not Supported");
             }
-        } else {
-            settings.error("No Ajax Support");
-        }
     };
     /* defaults */
     $.fn.upload_ajax.defaults = {
