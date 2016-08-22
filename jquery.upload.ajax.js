@@ -42,4 +42,7 @@
             alert("Error: " + msg);
         }
     };
+    /* support */
+    $.fn.upload_ajax.support = (window.FormData !== undefined && window.File !== undefined && $.support.ajax) ? true : false;
+    
 } (jQuery));
